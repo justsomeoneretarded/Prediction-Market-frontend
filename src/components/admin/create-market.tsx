@@ -67,8 +67,8 @@ export function CreateMarket({ onDone }: { onDone?: () => void }) {
           <div className="text-sm font-medium">Liquidity (locked after publishing)</div>
           <div className="mt-2 grid grid-cols-2 gap-3 md:grid-cols-4">
             <div><Label>Start YES %</Label><Input type="number" min={1} max={99} value={f.initialProbability} onChange={set('initialProbability')} /></div>
-            <div><Label>b</Label><Input type="number" min={10} value={f.liquidityB} onChange={set('liquidityB')} /></div>
-            <div><Label>Fee (bps)</Label><Input type="number" min={0} max={1000} value={f.feeBps} onChange={set('feeBps')} /></div>
+            <div><Label>b</Label><Input name="liquidityB" type="number" min={10} value={f.liquidityB} onChange={set('liquidityB')} /></div>
+            <div><Label>Fee (bps)</Label><Input name="feeBps" type="number" min={0} max={1000} value={f.feeBps} onChange={set('feeBps')} /></div>
             <div><Label>Max trade</Label><Input type="number" min={1} value={f.maxTradeAmount} onChange={set('maxTradeAmount')} /></div>
           </div>
           <p className="tabular mt-2 text-xs text-muted">Collateral from reserve (worst-case loss): <b className="text-text">{isFinite(maxLoss) ? maxLoss.toFixed(2) : '—'} Br</b></p>
